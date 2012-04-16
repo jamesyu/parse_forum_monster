@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create  
     @user = User.new(params[:user])  
     if @user.save
-      LocalUser.create! :username => @user.username
+      LocalUser.create! :username => @user.username, :created_at => @user.created_at
       redirect_to root_url, :notice => "Signed up!"  
     else  
       render "new"  
