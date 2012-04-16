@@ -1,3 +1,3 @@
 class User < ParseUser
-	alias :email :username
+  alias :email :username
 end

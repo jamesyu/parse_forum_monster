@@ -4,6 +4,6 @@ ParseRailsBoilerplate::Application.routes.draw do
   
   get "sign_up" => "users#new", :as => "sign_up"  
   root :to => "users#new"  
-  resources :users  
+  resources :users, :controller => "Users"
   resources :sessions 
 end
