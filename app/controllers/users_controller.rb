@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     parse_params.delete :password_confirmation
     @user = User.new(parse_params)
     if @user.save
-      LocalUser.create! :username => @user.username, :created_at => @user.created_at
+      LocalUser.create! :username => @user.username, :created_at => @user.created_at, :objectId => @user.objectId
       redirect_to root_url, :notice => "Signed up!"  
     else  
       render "new"  

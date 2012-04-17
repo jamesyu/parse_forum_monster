@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416192912) do
+ActiveRecord::Schema.define(:version => 20120417234054) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120416192912) do
     t.integer  "posts_count",  :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "objectId"
   end
 
   add_index "local_users", ["username"], :name => "index_local_users_on_username"
