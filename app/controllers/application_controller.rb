@@ -5,11 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_parse_user
-    if session[:user_id]
-      @current_parse_user ||= User.find(session[:user_id])
-    else
-      @current_parse_user = nil
-    end
+    @current_parse_user ||= (session[:user_id] ? User.find(session[:user_id]) : nil)
   end
   
   def current_user
